@@ -3,19 +3,19 @@
 
 [![Capa do Galaxy Tab Screen para Linux](linkedin-cover-galaxy-tab-screen-linux.jpg)](linkedin-cover-galaxy-tab-screen-linux.jpg)
 
-O **Galaxy Tab Screen** é o projeto que estou desenvolvendo para usar meu Samsung Galaxy Tab como segunda tela no Linux. Os testes são com um **Galaxy Tab S10 FE no Kubuntu/KDE Plasma**.
+Estou desenvolvendo o **Galaxy Tab Screen** para usar meu Samsung Galaxy Tab como segunda tela no Linux. Testo com um **Galaxy Tab S10 FE no Kubuntu/KDE Plasma**.
 
 Já uso a tela independente com S Pen, touch e som pelo cabo ou pelo Wi-Fi. Pelo cabo, mantenho a depuração USB desligada.
 
-Comecei com VNC, mas não gostei da experiência. Depois consegui imagem pelo “Segunda tela” da Samsung, usando o GNOME Network Displays. Funcionou em espelhamento. Para seguir com tela independente, caneta e dedos, comecei uma adaptação do [UScreen](https://github.com/majmichu1/UScreen).
+Comecei pelo VNC e não gostei. Depois consegui espelhar usando o “Segunda tela” da Samsung com GNOME Network Displays. Para ter tela independente, caneta e touch, comecei a adaptar o [UScreen](https://github.com/majmichu1/UScreen).
 
 Já consegui desenhar no Krita com pressão e inclinação da S Pen, apoiar a mão sem interferência nas rodadas e usar dois dedos para mover e ampliar a folha. O computador também oferece uma saída de som para o tablet. Agora a tela chegou à resolução nativa, **2304 × 1440 a 90 Hz**, e posso escolher resolução e atualização pelo PC ou pelo aplicativo.
 
-Escolhi o nome **Galaxy Tab Screen**. O repositório ficou como `galaxy-tab-screen-linux`, com o título explicando o objetivo de usar o tablet Samsung como segunda tela no Linux.
+O nome ficou **Galaxy Tab Screen**, e o repositório é `galaxy-tab-screen-linux`.
 
-Estou deixando o processo aqui porque quero aprender durante o desenvolvimento e entender os problemas que forem aparecendo.
+Estou registrando o processo para aprender com os testes e entender os problemas que aparecem.
 
-Esse projeto também vem sendo construído com a colaboração de [Edmundo Neto](https://github.com/emal0n). A troca de ideias sobre desenvolvimento e produto ajuda a pensar nas próximas etapas.
+Também conto com [Edmundo Neto](https://github.com/emal0n), trocando ideias sobre desenvolvimento, produto e próximos passos.
 
 ## O que já funcionou
 
@@ -36,7 +36,7 @@ Esse projeto também vem sendo construído com a colaboração de [Edmundo Neto]
 
 Os testes de desenho no Krita foram feitos em 1280 × 800. Depois validei a imagem na resolução nativa e a troca de modos pelo Wi-Fi. As novas opções também foram preparadas para USB, mas ainda falta repetir essas trocas pelo cabo. Os testes com a mão apoiada foram curtos e não cobrem todas as posições de uso.
 
-Os resultados, os erros e as correções estão no [registro dos testes](docs/testes.md). Também reuni [o que já conferi do UScreen e o que ainda falta](docs/testes.md#conferencia-uscreen). As medições de desempenho e a descrição de segurança do projeto original não são validações desta adaptação.
+Deixei resultados, erros e correções no [registro dos testes](docs/testes.md), junto com [o que conferi do UScreen e o que falta](docs/testes.md#conferencia-uscreen). Os números de desempenho e as afirmações de segurança do original não comprovam os resultados da minha adaptação.
 
 ## Resolução e Hz agora são uma escolha
 
@@ -57,7 +57,7 @@ Deixei 2304 × 1440 a 90 Hz e mantive os 60 Mbps. Não retomei a investigação 
 
 ## Como está funcionando
 
-Pelo cabo, a adaptação usa a rede criada pela **Ancoragem USB** do tablet. Pelo Wi-Fi, o computador e o tablet ficam na mesma rede local. O programa Linux cria a tela com EVDI, captura e codifica H.264 pela GPU. O aplicativo Android recebe o vídeo e devolve os eventos da caneta e dos dedos ao Linux.
+No cabo, uso a rede da **Ancoragem USB**. No Wi-Fi, PC e tablet precisam estar na mesma rede local. O host Linux cria a tela com EVDI e captura/codifica H.264 pela GPU. O Android recebe o vídeo e envia os eventos de caneta e touch para o Linux.
 
 Instalei o aplicativo manualmente e confirmei a sessão no tablet. O endereço usado pelo aplicativo fica o mesmo ao reconectar na porta USB testada, mesmo quando a rede recebe outro endereço automático. A sessão Wi-Fi usa o endereço próprio dessa rede. Não precisei ativar a depuração USB em nenhum desses testes.
 
@@ -67,7 +67,7 @@ Essas mudanças fazem parte da adaptação local. A versão do UScreen usada com
 
 ## Como estou organizando
 
-Estou fazendo por etapas para conseguir acompanhar e entender o processo. Nesta parte preferi seguir com os testes e reunir o registro depois. Os relatórios completos ficam salvos no meu computador; aqui ficam as explicações sem os endereços da rede e o inventário do computador.
+Estou fazendo por etapas. Nesta rodada, preferi testar e reunir os registros depois. Os relatórios completos ficam no meu computador; aqui entram as explicações, sem endereços da rede nem inventário do PC.
 
 Reuni as etapas no [registro dos testes](docs/testes.md), incluindo cabo, Wi-Fi, áudio, Krita e a escolha de resolução e Hz.
 
